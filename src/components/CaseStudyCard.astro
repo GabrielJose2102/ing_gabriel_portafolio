@@ -1,0 +1,95 @@
+---
+const projects = [
+  {
+    title: "Gestión de Viajes & Logística",
+    client: "Transportes GyR",
+    tag: "Odoo 18 Custom",
+    problem: "Descontrol en la rentabilidad real por viaje y procesos manuales de viáticos.",
+    solution: "Desarrollo de arquitectura nativa para control de flotas, integrando rutas, combustible y liquidación automática de choferes.",
+    impact: "Visibilidad financiera del 100% y automatización del flujo contable de gastos.",
+    tech: ["Python", "PostgreSQL", "Odoo Logic"]
+  },
+  {
+    title: "Localización Fiscal Venezuela",
+    client: "Casagri de Lara / GyR",
+    tag: "Legal & Fintech",
+    problem: "Riesgos de cumplimiento por cálculos manuales de retenciones e impuestos SENIAT.",
+    solution: "Implementación integral de Libros de Compra/Venta y automatización de retenciones fiscales (IVA/ISLR).",
+    impact: "Emisión de reportes legales sin margen de error y cumplimiento normativo automatizado.",
+    tech: ["SENIAT API", "Odoo v17/v18", "Lógica Fiscal"]
+  },
+  {
+    title: "HelpPagos: Multimoneda por Lotes",
+    client: "Multi-empresa (Velas3N / Amacorp)",
+    tag: "Financial Engineering",
+    problem: "Complejidad extrema en conciliación de pagos fraccionados en USD/VES.",
+    solution: "Módulo de procesamiento masivo con cálculo automático de diferencial cambiario e integración con tasa BCV.",
+    impact: "Reducción del 60% en tiempo de procesamiento contable y conciliación exacta.",
+    tech: ["Node.js", "Python", "BCV Integration"]
+  }
+];
+---
+
+<section id="proyectos" class="py-24 border-t border-slate-900">
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Casos de <span class="text-emerald-500">Éxito</span>
+      </h2>
+      <p class="mt-4 text-lg text-slate-400">
+        Proyectos de ingeniería donde la lógica de negocio compleja se transforma en eficiencia operativa.
+      </p>
+    </div>
+    <div class="flex items-center space-x-2 text-sm font-mono text-slate-500">
+      <span class="h-px w-8 bg-slate-800"></span>
+      <span>SOLUCIONES IMPLEMENTADAS</span>
+    </div>
+  </div>
+
+  <div class="space-y-12">
+    {projects.map((project) => (
+      <div class="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/20 transition-all hover:border-slate-700">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          
+          <!-- Info Panel -->
+          <div class="p-8 lg:col-span-7 lg:p-12">
+            <div class="flex items-center space-x-3 mb-6">
+              <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400 ring-1 ring-inset ring-emerald-500/20">
+                {project.tag}
+              </span>
+              <span class="text-slate-500 font-medium text-sm">/ {project.client}</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white mb-8 group-hover:text-emerald-400 transition-colors">
+              {project.title}
+            </h3>
+
+            <div class="grid gap-8 md:grid-cols-2">
+              <div>
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">El Desafío</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">{project.problem}</p>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">La Solución</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">{project.solution}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Panel -->
+          <div class="bg-emerald-500/5 p-8 lg:col-span-5 lg:p-12 border-l border-slate-800">
+            <h4 class="text-xs font-bold text-emerald-500/50 uppercase tracking-widest mb-6">Impacto de Negocio</h4>
+            <p class="text-xl font-medium text-emerald-50 text-pretty mb-8 italic">
+              "{project.impact}"
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {project.tech.map(t => (
+                <span class="text-[10px] font-mono text-slate-400 bg-slate-950 px-2 py-1 rounded-md border border-slate-800">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
